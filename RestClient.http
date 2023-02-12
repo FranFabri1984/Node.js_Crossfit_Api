@@ -1,0 +1,64 @@
+GET http://localhost:8080/api/workouts HTTP/1.1
+
+################################
+
+GET http://localhost:8080/api/workouts/4a3d9aaa-608c-49a7-a004-66305ad4ab50 HTTP/1.1
+
+################################
+
+GET http://localhost:8080/api/workouts/?mode=amrap HTTP/1.1
+
+################################
+
+POST http://localhost:8080/api/workouts HTTP/1.1
+content-type: application/json
+
+{
+  "name": "",
+  "mode": "AMRAP 20",
+  "equipment": [
+    "rack",
+    "barbell",
+    "abmat"
+  ],
+  "exercises": [
+    "15 toes to bars",
+    "10 thrusters",
+    "30 abmat sit-ups"
+  ],
+  "trainerTips": [
+    "Split your toes to bars into two sets maximum",
+    "Go unbroken on the thrusters",
+    "Take the abmat sit-ups as a chance to normalize your breath"
+  ]
+}
+
+################################
+
+PATCH  http://localhost:8080/api/workouts/3dc53bc8-27b8-4773-b85d-89f0a354d437  HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Core Buster",
+  "mode": "AMRAP 30",
+  "equipment": [
+    "rack",
+    "barbell",
+    "abmat"
+  ],
+  "exercises": [
+    "18 toes to bars",
+    "12 thrusters",
+    "35 abmat sit-ups"
+  ],
+  "trainerTips": [
+    "Split your toes to bars into two sets maximum",
+    "Goes unbroken on the thrusters",
+    "Take the abmat sit-ups as a chance to normalize your breath"
+  ]
+}
+
+#################
+
+DELETE http://localhost:8080/api/workouts/3dc53bc8-27b8-4773-b85d-89f0a354d437 HTTP/1.1
+
